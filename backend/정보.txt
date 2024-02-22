@@ -1,0 +1,45 @@
+info - 게임 전반적인 내용
+info - participants 10명의 참여자 정보
+
+# https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/1001.png
+아이템 사진 사이트
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/app");
+      const responseData = await response.json();
+      setData(responseData.puuid);
+      console.log(responseData)
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>React + FastAPI Example</h1>
+        <p>Data from FastAPI backend: {data}</p>
+      </header>
+    </div>
+  );
+}
+
+export default App;

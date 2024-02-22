@@ -1,0 +1,13 @@
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+  }
+  
+  .content {
+    text-align: center; /* 나머지 컨텐츠의 가운데 정렬을 위해 추가 */
+    margin-top: 20px; /* 입력창과의 간격을 조절하기 위해 추가 */
+  }
+  

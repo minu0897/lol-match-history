@@ -1,0 +1,29 @@
+#allplayerdiv {
+  width: 300px; /* 너비 설정 */
+}
+
+tr{
+  height: 25;
+}
+
+td img {
+  display: inline;
+  vertical-align: left; /* 이미지와 텍스트를 세로 가운데 정렬 */
+  margin-right: 10px; /* 이미지와 텍스트 사이 간격 설정 */
+}
+td{
+  width: 140px; /* 너비 설정 */
+  margin-right: 10px; /* 이미지와 텍스트 사이 간격 설정 */
+  vertical-align: right ; /* 이미지와 텍스트를 세로 가운데 정렬 */
+}
+td p{
+  width: 130px; /* 너비 설정 */
+  display: inline;
+  margin-right: 10px; /* 이미지와 텍스트 사이 간격 설정 */
+  vertical-align: right ; /* 이미지와 텍스트를 세로 가운데 정렬 */
+  font-size: 13px;
+}
+
+.my-p{
+  font-weight: bold;
+}
