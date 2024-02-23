@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from riotapi import fun_apiUserId
 from riotapi import fun_apiMatchHistory
 from riotapi import fun_apiMatchInfo
+from riotapi import fun_apiUserInfo
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -35,3 +36,9 @@ class Matinfo(BaseModel):
 def get_data_from_app3(matinfo: Matinfo):
     matInfo = fun_apiMatchInfo(matinfo.matchid)
     return matInfo
+
+#https://developer.riotgames.com/apis#summoner-v4/GET_getByPUUID
+@app.get("/user-info-data/")
+def get_data_from_app4():
+    userInfo = fun_apiUserInfo(fun_apiUserId("닝니이니","kr1")["puuid"])
+    return userInfo

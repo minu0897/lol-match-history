@@ -23,6 +23,7 @@ const LongBox = () => {
   const renderLongBoxes = () => {
     const longBoxes = [];
     for (let i = 0; i < count; i++) {
+      if(i==0)
       longBoxes.push(<GameLogBox key={i} match_id={data[i]} />);
     }
     return longBoxes;
@@ -34,7 +35,7 @@ const LongBox = () => {
 
   return (
     <div className="long-box">
-      <div className="content">                                                                                             
+      <div className="">                                                                                             
         {renderLongBoxes()}
       </div>
       <button onClick={showMoreLongBoxes}>더 보기</button>

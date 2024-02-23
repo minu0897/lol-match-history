@@ -12,6 +12,11 @@ def fun_apiMatchHistory(puuid):
 def fun_apiMatchInfo(matchId):
     return fun_api("https://asia.api.riotgames.com/lol/match/v5/matches/"+matchId+"?api_key=")
 
+def fun_apiUserInfo(puuid):
+    print("https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+puuid+"?api_key=")
+    return fun_api("https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/"+puuid+"?api_key=")
+
+
 
 def fun_api(url):
     # API 에서 공통적으로 사용하는 텍스트를 선언

@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import UseerInfo from './lolmatch/UserInfo';
 import LongBox from './lolmatch/LongBox';
 
 const cat = ReactDOM.createRoot(document.getElementById('root'));
 
 cat.render(
   <React.StrictMode>
+    <UseerInfo />
     <LongBox />
   </React.StrictMode>
 );
