@@ -7,7 +7,7 @@ const ParticipentInfo = (/*{champid}, {summonerid}*/) => {
     let summonerid = '닝니이니';
     return (
         <div>
-            <ChampId champid = {123}/>
+            <ChampId champid = {1}/>
             <SummonerId summonerid = {summonerid}/>
         </div>
     );

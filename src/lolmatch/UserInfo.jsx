@@ -9,9 +9,8 @@ const UserInfo = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/user-info-data'); // FastAPI 엔드포인트에 맞게 URL 변경
+        const response = await axios.post('http://localhost:8000/user-info-data',{puuId:props.puuInfo}); // FastAPI 엔드포인트에 맞게 URL 변경
         setData(response.data);
-        console.log(userinfo);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

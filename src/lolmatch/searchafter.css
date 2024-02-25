@@ -1,0 +1,10 @@
+.searchafter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100; /* 화면 전체 높이로 설정 */
+}
+.long-box  {    
+  flex-grow: 1; /* 내부 콘텐츠가 가능한 최대 영역을 차지하도록 설정합니다. */
+  padding: 10px; /* 내부 여백 설정 */
+}

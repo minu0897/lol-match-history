@@ -7,41 +7,31 @@ import axios from 'axios';
 
 const GameLogBox = (props) => {
     const [infodata, setData] = useState();
-    const [puuid, setUserData] = useState();
     const [targetInfo, setTargetData] = useState();
-    
+
     useEffect(() => {
         const fetchDataMatch = async () => {
             try {
                 const response = await axios.post('http://localhost:8000/match-info/',{matchid:props.match_id}); // FastAPI 엔드포인트에 맞게 URL 변경
                 setData(response.data);
-                // setTargetData(response.data.info.participants.find(participant => participant.puuid === puuid )); // 수정이 필요한 부분
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
-
-        const fetchUser = async () => {
-            try {
-                const response = await axios.get('http://localhost:8000/user-info/'); // FastAPI 엔드포인트에 맞게 URL 변경
-                setUserData(response.data);
-                fetchDataMatch();
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-
-        if(props.match_id){
-            fetchUser();
-        }
-    }, [props.match_id]);
+        fetchDataMatch();
+    }, []);
 
 
     useEffect(() => {
-        if (infodata && puuid) {
-            setTargetData(infodata.info.participants.find(participant => participant.puuid === puuid ));
+        if (infodata) {
+            setTargetData(infodata.info.participants.find(participant => participant.puuid == props.puuInfo ));
         }
-    }, [infodata, puuid]); // infodata와 puuid가 변경될 때마다 실행
+    }, [infodata]);
+
+    useEffect(() => {
+        if (infodata) {
+        }
+    }, [targetInfo]);
 
     return (
         <>

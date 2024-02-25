@@ -4,7 +4,3 @@
     display: flex; /* 내부 내용을 가로로 정렬하기 위해 Flexbox를 사용합니다. */
     margin: auto;
 }
-.long-box  {    
-    flex-grow: 1; /* 내부 콘텐츠가 가능한 최대 영역을 차지하도록 설정합니다. */
-    padding: 10px; /* 내부 여백 설정 */
-}
