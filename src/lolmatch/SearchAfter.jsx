@@ -8,6 +8,7 @@ import './searchafter.css'; // CSS 파일을 import 합니다.
 const SearchAfter = (props) => {
   const [puuid, setData] = useState(null);
   const childComp = useRef({});
+  const childbtnComp = useRef({});
 
   const fetchDataUser = async () => {
     try {
@@ -30,11 +31,15 @@ const SearchAfter = (props) => {
     childComp.current.showMoreLongBoxes();
   }
 
+  const handleChildRenderComplete = () => {
+    childbtnComp.current.button_false();
+  };
+
   return (
     <div className='searchafter'>
       <UserInfo puuInfo={puuid} />
-      <LongBox puuInfo={puuid} ref={childComp}  />
-      <AddButton callFunctionFromParent ={call_par_add}/>
+      <LongBox puuInfo={puuid} ref={childComp} onRenderComplete={handleChildRenderComplete}   />
+      <AddButton ref={childbtnComp} callFunctionFromParent ={call_par_add}/>
     </div>
   );
   

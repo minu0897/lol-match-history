@@ -25,6 +25,7 @@ const GameLogBox = (props) => {
     useEffect(() => {
         if (infodata) {
             setTargetData(infodata.info.participants.find(participant => participant.puuid == props.puuInfo ));
+            console.log('gamelogbox render')
         }
     }, [infodata]);
 

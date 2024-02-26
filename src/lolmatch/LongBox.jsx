@@ -7,6 +7,7 @@ import axios from 'axios';
 const LongBox = forwardRef((props,ref) => {
   const [count, setCount] = useState(1); // 초깃값은 5로 설정합니다.
   const [data, setData] = useState([]);
+
   const fetchData = async () => {
     try {
       const response = await axios.post('http://localhost:8000/match-history/',{puuId:props.puuInfo}); // FastAPI 엔드포인트에 맞게 URL 변경
@@ -19,10 +20,15 @@ const LongBox = forwardRef((props,ref) => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    props.onRenderComplete();
+    console.log(1);
+  }, [count]);
                                                                                        
 
   const showMoreLongBoxes = () => {
-    setCount(prevCount => prevCount + 1); // 현재 보여지는 LongBox 개수에 5를 더합니다.
+    setCount(prevCount => prevCount + 10); // 현재 보여지는 LongBox 개수에 5를 더합니다.
   };
   
   useImperativeHandle(ref,() =>({
