@@ -18,6 +18,7 @@ const LongBox = forwardRef((props,ref) => {
   };
 
   useEffect(() => {
+    console.log('LongBox 렌더완료');
     fetchData();
   }, []);
 
@@ -42,7 +43,7 @@ const LongBox = forwardRef((props,ref) => {
   const renderLongBoxes = () => {
     const longBoxes = [];
     for (let i = 0; i < count; i++) {
-        longBoxes.push(<GameLogBox key={i} match_id={data[i]} puuInfo={props.puuInfo} />);
+        longBoxes.push(<GameLogBox key={i} vkey={i} match_id={data[i]} puuInfo={props.puuInfo} />);
     }
     return longBoxes;
   };    

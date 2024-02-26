@@ -19,6 +19,8 @@ const GameLogBox = (props) => {
             }
         };
         fetchDataMatch();
+
+        console.log("GameLogBox"+props.vkey)
     }, []);
 
 

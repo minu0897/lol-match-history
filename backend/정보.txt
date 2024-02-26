@@ -26,7 +26,6 @@ function App() {
       const response = await fetch("http://localhost:8000/app");
       const responseData = await response.json();
       setData(responseData.puuid);
-      console.log(responseData)
     } catch (error) {
       console.error('Error fetching data:', error);
     }

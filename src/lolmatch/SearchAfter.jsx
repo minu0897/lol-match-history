@@ -14,7 +14,6 @@ const SearchAfter = (props) => {
   const location = useLocation();
   const userInfo = { ...location.state };
 //  const { userInfo } = location.state;
-  console.log(location);
 
   const fetchDataUser = async () => {
     try {
