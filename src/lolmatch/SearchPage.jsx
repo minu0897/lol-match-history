@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // axios 추가
 import './searchPageDeco.css';
 
@@ -7,6 +8,7 @@ const SearchPage = () => {
   const [name, setName] = useState('');
   const [hashStar, setHashStar] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -21,16 +23,7 @@ const SearchPage = () => {
       setHashStar(match[2].trim()); // '#' 다음의 문자열 설정
       setErrorMessage(''); // 에러 메시지 초기화
 
-      // Axios를 사용하여 백엔드 서버로 POST 요청 보내기
-      axios.post('http://localhost:8000/matchhistory', { name, hashStar })
-        .then(response => {
-          console.log('서버 응답:', response.data);
-          // 여기서 서버로부터의 응답을 처리할 수 있습니다.
-        })
-        .catch(error => {
-          console.error('에러 발생:', error);
-          // 에러 처리 로직 추가
-        });
+      navigate('/search',{ state: { name: match[1].trim(), tag: match[2].trim()} },);
     } else {
       setName(''); // 이름 초기화
       setHashStar(''); // '#' 다음의 문자열 초기화

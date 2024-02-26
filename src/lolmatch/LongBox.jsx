@@ -23,7 +23,6 @@ const LongBox = forwardRef((props,ref) => {
 
   useEffect(() => {
     props.onRenderComplete();
-    console.log(1);
   }, [count]);
                                                                                        
 

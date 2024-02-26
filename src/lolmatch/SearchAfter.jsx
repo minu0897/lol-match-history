@@ -1,4 +1,5 @@
 import React, { useState, useEffect,useRef } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 import axios from 'axios'; // axios 추가
 import UserInfo from './UserInfo';
 import LongBox from './LongBox';
@@ -9,13 +10,18 @@ const SearchAfter = (props) => {
   const [puuid, setData] = useState(null);
   const childComp = useRef({});
   const childbtnComp = useRef({});
+  const navigate = useNavigate();
+  const location = useLocation();
+  const userInfo = { ...location.state };
+//  const { userInfo } = location.state;
+  console.log(location);
 
   const fetchDataUser = async () => {
     try {
-        const response = await axios.post('http://localhost:8000/user-info/',{name:"닝니이니",tag:"kr1"}); // FastAPI 엔드포인트에 맞게 URL 변경
-        setData(response.data);
+      const response = await axios.post('http://localhost:8000/user-info/',{name:userInfo.name,tag:userInfo.tag}); // FastAPI 엔드포인트에 맞게 URL 변경
+      setData(response.data);
     } catch (error) {
-        console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error);
     }
   };
 
