@@ -1,11 +1,11 @@
-import React, { useState, useEffect, forwardRef,useImperativeHandle } from 'react';
+import React, { useState, useEffect, forwardRef,useImperativeHandle, Fragment } from 'react';
 import './longbox.css'; // CSS 파일을 import 합니다.
 import GameLogBox from './GameLogBox';
 import axios from 'axios';
 
 
 const LongBox = forwardRef((props,ref) => {
-  const [count, setCount] = useState(1); // 초깃값은 5로 설정합니다.
+  const [count, setCount] = useState(5); // 초깃값은 5로 설정합니다.
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
@@ -28,7 +28,7 @@ const LongBox = forwardRef((props,ref) => {
                                                                                        
 
   const showMoreLongBoxes = () => {
-    setCount(prevCount => prevCount + 10); // 현재 보여지는 LongBox 개수에 5를 더합니다.
+    setCount(prevCount => prevCount + 5); // 현재 보여지는 LongBox 개수에 5를 더합니다.
   };
   
   useImperativeHandle(ref,() =>({
@@ -50,10 +50,14 @@ const LongBox = forwardRef((props,ref) => {
 
 
   return (
-    <div className="long-box">
-      <div className="">                                                                                             
-        {renderLongBoxes()}
-      </div>
+    <div>
+      <Fragment>
+        <div className="long-box">
+          <div>                                                                                           
+            {renderLongBoxes()}
+          </div>
+        </div>
+      </Fragment>
     </div>
   );
 });

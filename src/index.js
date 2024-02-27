@@ -6,7 +6,6 @@ import SearchAfter from './lolmatch/SearchAfter';
 import SearchPage from './lolmatch/SearchPage';
 import Navigator from './lolmatch/Navigator';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

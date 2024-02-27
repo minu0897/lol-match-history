@@ -2,6 +2,7 @@ import React from "react";
 import GameMode from "./GameMode";
 import GameResult from "./GameResult";
 import GameTime from "./GameTime";
+import './gameinfo.css';
 
 const GameInfo = (props) => {
     const mode = props.gamemode;
@@ -9,10 +10,14 @@ const GameInfo = (props) => {
     const time = props.time;
 
     return (
-        <div>
+        <div>   
             <GameMode info={mode}/>
-            <GameResult result={result}/>
-            <GameTime time={time}/>
+            <div className="container">  
+                <GameResult result={result}/>
+            </div>
+            <div className="container">  
+                <GameTime time={time}/>
+            </div>
         </div>
     );
 };

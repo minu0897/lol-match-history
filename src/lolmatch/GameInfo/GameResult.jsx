@@ -11,7 +11,7 @@ const GameResult = ({ result }) => {
     message = "패배";
     color = "pink";
   } else {
-    message = "결과 없음";
+    message = "다시 하기";
     color = "gray";
   }
 

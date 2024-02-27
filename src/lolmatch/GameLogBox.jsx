@@ -14,13 +14,13 @@ const GameLogBox = (props) => {
             try {
                 const response = await axios.post('http://localhost:8000/match-info/',{matchid:props.match_id}); // FastAPI 엔드포인트에 맞게 URL 변경
                 setData(response.data);
+                console.log(infodata)
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         fetchDataMatch();
 
-        console.log("GameLogBox"+props.vkey)
     }, []);
 
 

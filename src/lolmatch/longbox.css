@@ -1,6 +1,6 @@
 .long-box {
     width: 600px; /* 가로 크기 설정 */
-    height: 145px; /* 세로 크기 설정 */
-    display: flex; /* 내부 내용을 가로로 정렬하기 위해 Flexbox를 사용합니다. */
+    bottom: 50px;
+    display: absolute; /* 내부 내용을 가로로 정렬하기 위해 Flexbox를 사용합니다. */
     margin: auto;
 }

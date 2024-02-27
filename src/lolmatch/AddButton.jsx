@@ -12,11 +12,11 @@ const AddButton = forwardRef((props,ref) => {
     // 예시로 setTimeout 함수를 사용하여 2초 후에 로딩 상태를 false로 변경합니다.
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3300);
   };
 
   const button_false = () => {
-      setIsLoading(false);
+      //setIsLoading(false);
   };
 
   useImperativeHandle(ref,() =>({

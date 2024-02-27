@@ -6,11 +6,12 @@
     margin-top: 5px;
     background-color: #ecf2ff;
 }
+
 .container-lose {
     display: grid;
     grid-template-columns: 100px 160px auto; /* 세 개의 컬럼 설정 */
     gap: 10px; /* 그리드 간격 설정 */
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #fff1f3;
 }

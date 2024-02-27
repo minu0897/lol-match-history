@@ -10,7 +10,6 @@ const SearchAfter = (props) => {
   const [puuid, setData] = useState(null);
   const childComp = useRef({});
   const childbtnComp = useRef({});
-  const navigate = useNavigate();
   const location = useLocation();
   const userInfo = { ...location.state };
 //  const { userInfo } = location.state;
@@ -41,10 +40,14 @@ const SearchAfter = (props) => {
   };
 
   return (
-    <div className='searchafter'>
-      <UserInfo puuInfo={puuid} />
-      <LongBox puuInfo={puuid} ref={childComp} onRenderComplete={handleChildRenderComplete}   />
-      <AddButton ref={childbtnComp} callFunctionFromParent ={call_par_add}/>
+    <div>
+      <div className='searchafter'>
+        <UserInfo puuInfo={puuid} />
+        <LongBox puuInfo={puuid} ref={childComp} onRenderComplete={handleChildRenderComplete}   />  
+      </div>
+      <div className='middle'>
+        <AddButton ref={childbtnComp} callFunctionFromParent ={call_par_add}/>
+      </div>
     </div>
   );
   
