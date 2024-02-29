@@ -51,13 +51,13 @@ const LongBox = forwardRef((props,ref) => {
 
   return (
     <div>
-      <Fragment>
         <div className="long-box">
-          <div>                                                                                           
+          <div>              
+          <Fragment>                                                                             
             {renderLongBoxes()}
+          </Fragment>
           </div>
         </div>
-      </Fragment>
     </div>
   );
 });
